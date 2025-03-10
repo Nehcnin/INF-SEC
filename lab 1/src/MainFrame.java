@@ -13,14 +13,15 @@ public class MainFrame extends JFrame {
     private int lastPressed;
     private String lastText;
     private int lastAction;
-    public MainFrame(VigenereCipher vigenereCipher){
-        setLayout(new GridLayout(2,2));
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setBounds(200,200,1000,600);
 
-        this.vigenereCipher=vigenereCipher;
-        lastPressed =0;
-        lastAction=0;
+    public MainFrame(VigenereCipher vigenereCipher) {
+        setLayout(new GridLayout(2, 2));
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBounds(200, 200, 1000, 600);
+
+        this.vigenereCipher = vigenereCipher;
+        lastPressed = 0;
+        lastAction = 0;
 
         jTextArea1 = new JTextArea();
         jTextArea2 = new JTextArea();
@@ -43,7 +44,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //String encrypted = vigenereCipher.Encrypt(jTextArea1.getText());
                 //jTextArea2.setText(encrypted);
-                lastPressed=1;
+                lastPressed = 1;
             }
         });
 
@@ -52,7 +53,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //String decrypted = vigenereCipher.Decrypt(jTextArea1.getText());
                 //jTextArea2.setText(decrypted);
-                lastPressed=2;
+                lastPressed = 2;
             }
         });
     }
@@ -61,21 +62,21 @@ public class MainFrame extends JFrame {
         return lastPressed;
     }
 
-    public void Encrypt(){
-        if(!jTextArea1.getText().equals(lastText) || lastAction!=1) {
+    public void Encrypt() {
+        if (!jTextArea1.getText().equals(lastText) || lastAction != 1) {
             String encrypted = vigenereCipher.Encrypt(jTextArea1.getText());
             jTextArea2.setText(encrypted);
             lastText = jTextArea1.getText();
-            lastAction=1;
+            lastAction = 1;
         }
     }
 
-    public void Decrypt(){
-        if(!jTextArea1.getText().equals(lastText) || lastAction!=2) {
+    public void Decrypt() {
+        if (!jTextArea1.getText().equals(lastText) || lastAction != 2) {
             String decrypted = vigenereCipher.Decrypt(jTextArea1.getText());
             jTextArea2.setText(decrypted);
             lastText = jTextArea1.getText();
-            lastAction=2;
+            lastAction = 2;
         }
     }
 }

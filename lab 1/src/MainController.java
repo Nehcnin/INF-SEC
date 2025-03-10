@@ -1,17 +1,18 @@
 public class MainController implements Runnable {
     private MainFrame mainFrame;
-    public MainController(MainFrame mainFrame){
-        this.mainFrame=mainFrame;
+
+    public MainController(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
     }
 
     @Override
     public void run() {
-        while(true){
-            if(mainFrame.getLastPressed()==1){
+        while (true) {
+            if (mainFrame.getLastPressed() == 1) {
                 mainFrame.Encrypt();
             }
 
-            if(mainFrame.getLastPressed()==2){
+            if (mainFrame.getLastPressed() == 2) {
                 mainFrame.Decrypt();
             }
 

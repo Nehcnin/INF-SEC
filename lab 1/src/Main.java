@@ -1,16 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        String alphabet= new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz,./;'[]*()");
+        String alphabet = new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz,./!;'[]*()");
         VigenereCipher vigenereCipher;
-        if(args.length==2){
+        if (args.length == 2) {
 //first parameter is the key, second parameter is the option, 1 for ascii alphabet, and 2 for custom alphabet
-            if(args[1].equals("1"))
-             vigenereCipher=new VigenereCipher(args[0]);
+            if (args[1].equals("1"))
+                vigenereCipher = new VigenereCipher(args[0]);
             else
-                vigenereCipher = new VigenereCipher(args[0],alphabet);
+                vigenereCipher = new VigenereCipher(args[0], alphabet);
 
-        }
-        else{
+        } else {
             throw new RuntimeException();
         }
         MainFrame mainFrame = new MainFrame(vigenereCipher);
