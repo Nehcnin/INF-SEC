@@ -65,7 +65,7 @@ public class AES {
             case "1": return "ECB";
             case "2": return "CBC";
             case "3": return "CFB";
-            default: throw new IllegalArgumentException("Érvénytelen mód!");
+            default: throw new IllegalArgumentException("Wrong mode!");
         }
     }
 

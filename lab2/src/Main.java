@@ -1,7 +1,3 @@
-import javax.crypto.EncryptedPrivateKeyInfo;
-import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
